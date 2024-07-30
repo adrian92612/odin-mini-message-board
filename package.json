@@ -1,0 +1,17 @@
+{
+  "name": "odin-mini-message-board",
+  "version": "1.0.0",
+  "description": "The Odin Project's NodeJS Project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}
