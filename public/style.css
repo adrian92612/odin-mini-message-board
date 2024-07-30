@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100dvh;
+  font-size: 1.2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+  color: #000;
+}
+
+main ul {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+main ul li {
+  border-bottom: 1px dashed gray;
+  padding-bottom: 10px;
+}
+
+main ul li a {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid gray;
+  background-color: gray;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+form {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+form input {
+  padding: 5px 10px;
+}
+
+form textarea {
+  resize: vertical;
+  height: 200px;
+}
+
+form button {
+  padding: 5px;
+  width: 100px;
+  align-self: flex-end;
+}
+
+.message-details h1 {
+  margin-bottom: 20px;
+}
+
+.message-details p {
+  margin-bottom: 5px;
+}

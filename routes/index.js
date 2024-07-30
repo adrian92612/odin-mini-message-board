@@ -1,4 +1,7 @@
 import { Router } from "express";
+import * as controller from "../controller/indexController.js";
+
+const router = Router();
 
 const messages = [
   {
@@ -9,31 +12,8 @@ const messages = [
   },
 ];
 
-const router = Router();
-
-router.get("/", (req, res) => res.render("index", { title: "Mini Message Board", messages }));
-
-router
-  .route("/new")
-  .get((req, res) => res.render("newMessageForm", { title: "Send Message" }))
-  .post((req, res) => {
-    messages.push({
-      id: messages.length + 1,
-      user: req.body.username,
-      text: req.body.text,
-      dateAdded: new Date(),
-    });
-    res.redirect("/");
-  });
-
-router.get("/messages/:id", (req, res) => {
-  const id = parseInt(req.params.id, 10);
-  if (id > messages.length) {
-    res.send("This message does not exists");
-    return;
-  }
-  const msg = messages.find((msg) => msg.id === id);
-  res.render("messageDetails", { title: "Message Details", msg });
-});
+router.get("/", controller.getIndex);
+router.get("/messages/:id", controller.getMessageDetails);
+router.route("/new").get(controller.getNewMessage).post(controller.postNewMessage);
 
 export { router, messages };

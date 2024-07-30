@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
-  </head>
+  <%- include('./partials/head') %>
   <body>
-    <div>
-      <h2><%= msg.user %></h2>
-      <p><%= msg.text %></p>
-      <p><%= msg.dateAdded %></p>
-    </div>
-    <a href="/">Home</a>
+    <%- include('./partials/header') %>
+    <main>
+      <div class="message-details">
+        <h1>Message Details</h1>
+        <p><strong>Username:</strong> <%= msg.user %></p>
+        <p><strong>Text:</strong> <%= msg.text %></p>
+        <p><strong>Date Added:</strong> <%= msg.dateAdded %></p>
+        <p><strong>ID:</strong> <%= msg.id %></p>
+      </div>
+    </main>
   </body>
 </html>

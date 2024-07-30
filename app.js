@@ -11,7 +11,10 @@ app.use(urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", router);
+
+app.use((err, req, res, next) => res.status(500).send("Something went wrong."));
 
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
